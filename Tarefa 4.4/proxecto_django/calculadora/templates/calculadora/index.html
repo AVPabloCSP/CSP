@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora Django</title>
+</head>
+<body>
+    <h1>Mini Calculadora</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="number" name="numero1" placeholder="Número 1" required>
+        <input type="number" name="numero2" placeholder="Número 2" required>
+        <select name="operacion">
+            <option value="sumar">Sumar</option>
+            <option value="restar">Restar</option>
+        </select>
+        <button type="submit">Calcular</button>
+    </form>
+    
+    {% if resultado is not None %}
+        <h2>Resultado: {{ resultado }}</h2>
+    {% endif %}
+</body>
+</html>
